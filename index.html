@@ -376,6 +376,14 @@
 
 
 <script>
+  // Login Form (still fake login)
+  document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Login successful! (You can integrate real login later)");
+    document.getElementById("loginModal").style.display = "none";
+  });
+
+  // Signup Form (real backend integration)
   document.getElementById("signupForm").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -400,7 +408,7 @@
         alert(result); // e.g., "User registered successfully!"
         document.getElementById("signupModal").style.display = "none";
       } else {
-        alert(result || "❌ Signup failed.");
+        alert("❌ " + result);
       }
 
     } catch (error) {
